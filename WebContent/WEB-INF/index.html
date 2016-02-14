@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Black &amp; White</title>
+
+<!-- meta -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- css -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="css/pace.css">
+<link rel="stylesheet" href="css/custom.css">
+<link href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.css"
+	rel="stylesheet">
+<!-- js -->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pace.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<style type="text/css">
+	.navbar-nav a:HOVER{
+		color: #777!important;
+	}
+</style>
+</head>
+
+<body>
+	<#include "temp_head.html" />
+
+	<div class="content-body">
+	<div style="position: fixed;">
+		<embed src="http://music.163.com/style/swf/widget.swf?sid=67784383&type=0&auto=1&width=310&height=430" width="330" height="450"  allowNetworking="all"></embed>
+	</div>
+		<div class="container">
+			<div class="row">
+				<main class="col-md-8"> <#list blogs as x>
+				<article class="post post-1">
+					<header class="entry-header">
+						<h1 class="entry-title"> 
+							<a href="single.html"><#if x.title??>${x.title}</#if></a>
+						</h1>
+						<div class="entry-meta">
+							<span class="post-category"><a href="#"><#if x.read??>${x.read}</#if>阅读</a></span> <span
+								class="post-date"><a href="#">发布时间：<time
+										class="entry-date" datetime="<#if x.date??>${x.date}</#if>"><#if x.date??>${x.date}</#if></time></a></span> <span class="post-author"><a href="#">作者:${x.user.userName}</a></span> <span class="comments-link"><a href="#"></a></span>
+						</div>
+					</header>
+					<div class="entry-content clearfix">
+						<p>${x.desc}</p>
+						<div class="read-more cl-effect-14">
+							<a href="#" class="more-link">Continue reading <span
+								class="meta-nav">→</span></a>
+						</div>
+					</div>
+				</article>
+				</#list> </main>
+				<#include "temp_right.html" />
+			</div>
+		</div>
+	</div>
+	<#include "temp_footer.html" />
+
+	<#include "temp_model.html" />
+
+	<script src="js/script.js"></script>
+
+</body>
+</html>

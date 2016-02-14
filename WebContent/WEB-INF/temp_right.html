@@ -1,0 +1,27 @@
+<aside class="col-md-4">
+					<div class="widget widget-recent-posts">
+						<h3 class="widget-title">人气排行</h3>
+						<ul>
+							<#list blogRead as x>
+							<li><a href="#">${x.title}</a></li>
+							</#list>
+						</ul>
+					</div>
+					<div class="widget widget-archives">
+						<h3 class="widget-title">最新文章</h3>
+						<ul>
+							<#list blogNew as x>
+							<li><a href="#">${x.title}</a></li>
+							</#list>
+						</ul>
+					</div>
+
+					<div class="widget widget-category">
+						<h3 class="widget-title">最新会员</h3>
+						<ul>
+							<#list user as x>
+							<li><a href="#">${x.userName}</a></li>
+							</#list>
+						</ul>
+					</div>
+				</aside>
